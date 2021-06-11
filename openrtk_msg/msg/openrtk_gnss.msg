@@ -1,0 +1,21 @@
+std_msgs/Header header
+uint16 gps_week
+uint32 gps_millisecs
+uint8 position_type
+float64 latitude
+float64 longitude
+float64 height
+float32 latitude_std_deviation
+float32 longitude_std_deviation
+float32 height_std_deviation
+uint8 num_of_satellites
+uint8 num_satellite_in_solution
+float32 hdop
+float32 diffage
+float32 north_vel
+float32 east_vel
+float32 up_vel
+float32 north_vel_std_deviation
+float32 east_vel_std_deviation
+float32 up_vel_std_deviation
+

@@ -1,0 +1,29 @@
+<launch>
+    <arg name="brviz" default="true"/>
+    <arg name="bplot" default="false"/>
+
+    <!-- Load urdf -->
+    <param if="$(arg brviz)" 
+    name="robot_description" textfile="$(find openrtk_ros)/urdf/rtk.urdf"/>
+
+    <!-- Start rviz -->
+    <node if="$(arg brviz)" 
+    pkg="rviz" type="rviz" name="rviz" args="-d $(find openrtk_ros)/config/config.rviz" />
+
+    <!-- Start driver -->
+    <node name="openrtk" pkg="openrtk_ros" type="driver" output="screen" >
+      <param name="device" value="/dev/ttyUSB0" type="str"/>
+      <param name="baud" value="460800" type="int"/>
+    </node>
+
+
+    <!-- Plot -->
+    <group ns="plot" if="$(arg bplot)">
+      <node name="gps_week" pkg="rqt_plot" type="rqt_plot"
+      args="/rtk/topic_rtk/gps_week"/>
+      <node name="gps_millisecs" pkg="rqt_plot" type="rqt_plot"
+      args="/rtk/topic_rtk/gps_millisecs"/>
+    </group>
+    
+
+</launch>

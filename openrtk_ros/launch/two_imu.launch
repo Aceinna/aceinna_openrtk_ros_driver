@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- rtk #1 -->
+  <node name="openrtk1" pkg="openrtk_ros" type="driver" output="screen" >
+    <param name="device" value="/dev/ttyUSB0" type="str"/>
+    <param name="baud" value="460800" type="int"/>
+  </node>
+
+  <!-- rtk #2 -->
+  <node name="openrtk2" pkg="openrtk_ros" type="driver" output="screen" >
+    <param name="device" value="/dev/ttyUSB1" type="str"/>
+    <param name="baud" value="460800" type="int"/>
+  </node>
+
+  <!-- rtk #n -->
+</launch>
