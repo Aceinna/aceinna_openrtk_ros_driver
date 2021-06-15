@@ -29,7 +29,7 @@ const float r2d = 180/3.14159265;
 
 const uint8_t HEADER[2] = {0X55, 0X55};
 const uint8_t HandStr[] = {"hello pc i'm openrtk_data"};
-const uint8_t Handbk[] = {"i am pc\r\n"};
+const uint8_t Handbk[] = {"log debug on\r\n"};
 
 RTKDriver::RTKDriver(ros::NodeHandle nh)
     : m_nh(nh)
