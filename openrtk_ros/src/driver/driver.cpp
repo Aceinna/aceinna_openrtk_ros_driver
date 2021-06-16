@@ -299,7 +299,7 @@ void RTKDriver::ThreadGetDataEth(void)
             continue; 
 	}   
 
-        if((recvBuf[0] == 0x68) && (recvBuf[1] == 0x65))        //we receive string "hello pc,i'm openrtk_data", and should send back " i am pc"
+        if((recvBuf[0] == 0x68) && (recvBuf[1] == 0x65))        //we receive string "hello pc,i'm openrtk_data", and should send back "log debug on"
         {                                                       //here we just check 'h' and 'e', it is easier than strcmp or others
             sendto(sock_Cli, Handbk, sizeof(Handbk), 0, (struct sockaddr*)&addr_sensor, sockstrlen);
             cout << "Hand Back" << endl;
