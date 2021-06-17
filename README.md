@@ -24,8 +24,7 @@ Usage
 - PC with Ubuntu 18.04
 - Python 3.x
 - Install ROS Melodic, please refer to http://wiki.ros.org/melodic/Installation/Ubuntu
-- OpenRTK330LI EVK
-- OpenRTK330LI Firmware version 23.05
+- OpenRTK330LI EVK (FW v23.05), please refer to https://openrtk.readthedocs.io/en/latest/firmware_upgrade.html for EVK upgrade steps
 
 
 
@@ -47,7 +46,14 @@ The following are steps to build the ROS driver from source code in your local d
 
 **Note**:   This ROS driver supports for serial port and Ethernet port. The messages contents output by the two ports are the same. To switch between the two type of ports, go to *line 122* of /ros_rtk/src/driver/driver.cpp  and follow the operation in the comments.
 
-When you choose the Ethernet port interface, you need first to check OpenRTK330LI and system IP to make sure they are in the same network segment. Then modify the broadcast address on line 9 of "netbios.py" inside the folder "openrtk_ros", and run it in Python3 to let OpenRTK330LI device get your Ubuntu system IP. If the console prints ".........   true ", it shows OpenRTK330LI has obtained your system IP address successfully, then the ROS driver can take effective. 
+When you choose the Ethernet port interface, follow the few steps below to configure the device IP:
+
+1. Get the local network IP of your Ubuntu system (e.g. 192.168.xxx.xxx)	
+
+2. Modify *LINE 9* of  the python script "netbios.py" inside the folder "openrtk_ros" to let OpenRTK330LI device get your Ubuntu system IP
+
+3. Run the "netbios.py" script to complete the config, and if the console prints ".........   true ", it shows OpenRTK330LI has obtained your system IP address successfully, then the ROS driver takes effective. 
+
 
 
 ### Operation
