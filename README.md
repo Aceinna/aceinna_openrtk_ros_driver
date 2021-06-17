@@ -54,7 +54,6 @@ When you choose the Ethernet port interface, follow the few steps below to confi
 
 3. Run the "netbios.py" script to complete the config, and if the console prints ".........   true ", it shows OpenRTK330LI has obtained your system IP address successfully, then the ROS driver takes effective. 
 
-   
 
 
 ### Operation
